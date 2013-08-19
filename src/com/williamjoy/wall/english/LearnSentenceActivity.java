@@ -1,8 +1,10 @@
 package com.williamjoy.wall.english;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public class LearnSentenceActivity extends Activity {
 
@@ -19,4 +21,17 @@ public class LearnSentenceActivity extends Activity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case (R.id.menu_settings):
+                Intent intent = new Intent(this.getApplicationContext(),
+                        SettingsActivity.class);
+                startActivityForResult(intent, 0);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
 }
