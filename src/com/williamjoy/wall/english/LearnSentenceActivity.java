@@ -13,8 +13,6 @@ public class LearnSentenceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_sentence);
-        TextView tv = (TextView) this.findViewById(R.id.textViewHello);
-        tv.setText("Love Mary!");
     }
 
     @Override
