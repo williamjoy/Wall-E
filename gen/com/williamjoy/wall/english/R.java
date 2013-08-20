@@ -22,7 +22,8 @@ public final class R {
     public static final class id {
         public static final int fullscreen_content=0x7f090001;
         public static final int given_content=0x7f090000;
-        public static final int menu_settings=0x7f090002;
+        public static final int menu_settings=0x7f090003;
+        public static final int wrapper_layout=0x7f090002;
     }
     public static final class layout {
         public static final int activity_learn_sentence=0x7f030000;

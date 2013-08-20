@@ -2,9 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#111111"
     tools:context=".LearnSentenceActivity" >
-
 
     <TextView
         android:id="@+id/given_content"
@@ -22,11 +21,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:hint="please type what you memorized"
         android:inputType="text"
         android:keepScreenOn="true"
-        android:hint="please type what you memorized"
         android:textColor="#f3b5e5"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <LinearLayout
+        android:id="@+id/wrapper_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="191dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+    </LinearLayout>
 
 </RelativeLayout>
