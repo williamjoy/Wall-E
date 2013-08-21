@@ -18,9 +18,11 @@ public class LearnSentenceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_sentence);
-        ViewGroup l=(ViewGroup) this.findViewById(R.id.wrapper_layout);
-        l.addView(new VocabularyInput(getApplicationContext(), "Mary"));
-        l.addView(new VocabularyInput(getApplicationContext(), "Yahoo!"));
+        ViewGroup l = (ViewGroup) this.findViewById(R.id.wrapper_layout);
+        for (String token : "Love is like a violin. The music may stop now and then, but the strings remain forever."
+                .split(" ")) {
+            l.addView(new VocabularyInput(getApplicationContext(), token));
+        }
     }
 
     @Override

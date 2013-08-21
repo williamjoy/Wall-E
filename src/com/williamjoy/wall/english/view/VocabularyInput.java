@@ -15,7 +15,7 @@ public class VocabularyInput extends EditText {
     public VocabularyInput(Context context, String targetToken) {
         super(context);
         this.targetToken = targetToken;
-        this.setText("Love");
+        this.setText(targetToken);
         this.setTextColor(Color.RED);
         this.setMinimumWidth(50);
         this.addTextChangedListener(new TextWatcher() {
