@@ -17,26 +17,6 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/wrapper_layout"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="44dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="type what you memorized"
-        android:inputType="text"
-        android:keepScreenOn="true"
-        android:textColor="#f3b5e5"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:typeface="monospace" >
-
-        <requestFocus />
-    </EditText>
-
     <org.apmem.tools.layouts.FlowLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/wrapper_layout"
