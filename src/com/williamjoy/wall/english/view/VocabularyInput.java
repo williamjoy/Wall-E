@@ -20,6 +20,7 @@ public class VocabularyInput extends EditText {
         this.setText(targetToken);
         if (this.isEditable()) {
             this.setSingleLine();
+            this.setSelectAllOnFocus(true);
             this.setTextColor(Color.RED);
             this.setMinimumWidth(50);
             this.addTextChangedListener(new TextWatcher() {
