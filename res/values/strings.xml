@@ -7,7 +7,7 @@
     <string name="title_activity_learn_sentence">LearnSentenceActivity</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content"> Love is like a violin. The music may stop now and then, but the strings remain forever.</string>
+    <string name="learn_content"></string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
 

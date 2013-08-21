@@ -6,25 +6,43 @@
     android:orientation="vertical"
     tools:context=".LearnSentenceActivity" >
 
-    <TextView
-        android:id="@+id/given_content"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="#33b5e5"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content" >
 
-    <org.apmem.tools.layouts.FlowLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/wrapper_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="191dp"
-        android:gravity="center" >
-    </org.apmem.tools.layouts.FlowLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
+            <TextView
+                android:id="@+id/given_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:keepScreenOn="true"
+                android:text="@string/learn_content"
+                android:textColor="#33b5e5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <org.apmem.tools.layouts.FlowLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/wrapper_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="191dp"
+                android:gravity="center" >
+            </org.apmem.tools.layouts.FlowLayout>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Check" />
+F
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
