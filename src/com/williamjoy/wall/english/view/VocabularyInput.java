@@ -2,9 +2,11 @@ package com.williamjoy.wall.english.view;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -24,10 +26,12 @@ public class VocabularyInput extends EditText {
         this.setText(targetToken);
         // this.setInputType(EditorInfo.TYPE_DATETIME_VARIATION_NORMAL);
         if (this.isEditable()) {
+            this.setGravity(Gravity.CENTER_HORIZONTAL);
             this.setSingleLine();
             this.setSelectAllOnFocus(true);
             this.setTextColor(Color.RED);
-            this.setMinimumWidth(50);
+            this.setMinWidth(targetToken.length() * 20);
+            this.setTypeface(Typeface.MONOSPACE);
             this.setOnFocusChangeListener(new OnFocusChangeListener() {
 
                 public void onFocusChange(View v, boolean hasFocus) {
@@ -74,6 +78,7 @@ public class VocabularyInput extends EditText {
             this.setText(targetToken);
         } else {
             this.setTextColor(Color.RED);
+            this.setText(input);
         }
     }
 
