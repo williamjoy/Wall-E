@@ -18,16 +18,17 @@ import android.widget.TextView;
 import com.williamjoy.wall.english.view.VocabularyInput;
 
 public class LearnSentenceActivity extends Activity {
-    String learn_content = "Nowadays, the increasing rate of overweight children and adults is a worldwide health issue. Obesity is a major problem which is increasing day by day in school-age children. There are various reasons behind it. This essay will discuss the causes of obesity and offer some solutions.\n"
-            + "\n"
-            + "The first cause of obesity is junk food. It is often seen that mostly children are fond of burgers, pizzas, noodles and coke. These types of foods are easily available to them in school canteens. Children love to purchase chips, chocolates, - ice-cream for lunch. Moreover, in this modern era, parents are working and they do not have time to cook at home. Parents often buy dinner for their children instead of preparing food at home. This calorie-rich diet is making children obese. This problem can be solved by teaching children to cook healthy foods for themselves and banning junk foods and fizzy drinks in schools. This diet can be replaced by milk, juice and fruits for lunch.\n"
-            + "\n"
-            + "The second cause of obesity is sedentry life style. It is true that the use of computers and television is increasing in children. They spend most of their time watching television or playing video games on a computer. This technological advancement has reduced the level of physical activity in this specific age group. This issue can be resolved by encouraging children to do physical exercises. Parents can take their children to park to encourage playing with friends. Furthermore, schools can add sports in their curriculum to maintain physical fitness in their students.\n"
-            + "\n"
-            + "To sum up, it is clear that main causes of obesity are unhealthy eating and not enough physical activities. This ailment can be prevented and treated by healthy eating habbits and physical exercises.\n"
-            + "\n"
-            + "This is a good essay. There are only a few minor errors that could have been easily prevented by proofreading this essay one last time before submission (mouse over the words underlined in blue shows corrections). Overall, this work seems worthy of IELTS Band 8. Keep up the good work! //#(-12%)";
-
+    String learn_content = "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.\n" + 
+    		"However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.\n" + 
+    		"\"My dear Mr. Bennet,\" said his lady to him one day, \"have you heard that Netherfield Park is let at last?\"\n" + 
+    		"Mr. Bennet replied that he had not.\n" + 
+    		"\"But it is,\" returned she; \"for Mrs. Long has just been here, and she told me all about it.\"\n" + 
+    		"Mr. Bennet made no answer.\n" + 
+    		"\"Do you not want to know who has taken it?\" cried his wife impatiently.\n" + 
+    		"\"You want to tell me, and I have no objection to hearing it.\"\n" + 
+    		"This was invitation enough.\n" + 
+    		"\"Why, my dear, you must know, Mrs. Long says that Netherfield is taken by a young man of large fortune from the north of England; that he came down on Monday in a chaise and four to see the place, and was so much delighted with it, that he agreed with Mr. Morris immediately; that he is to take possession before Michaelmas, and some of his servants are to be in the house by the end of next week.\"\n" + 
+    		"\"What is his name?\"";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class LearnSentenceActivity extends Activity {
         TextView t = (TextView) this.findViewById(R.id.given_content);
         t.setText(learn_content);
         Pattern p = Pattern.compile(
-                "([a-z0-9']+(-[a-z0-9]+)*)|[,.()#@\\$]+|\\n+",
+                "([a-z0-9']+(-[a-z0-9]+)*)|[,.()#@\\$!?\\\"]+|\\n+",
                 Pattern.MULTILINE | Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(learn_content);
         ViewGroup stubViewGroup = (ViewGroup) this
