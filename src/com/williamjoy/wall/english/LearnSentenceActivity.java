@@ -3,6 +3,8 @@ package com.williamjoy.wall.english;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apmem.tools.layouts.FlowLayout;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,19 +30,19 @@ public class LearnSentenceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_sentence);
-        TextView t=(TextView) this.findViewById(R.id.given_content);
+        TextView t = (TextView) this.findViewById(R.id.given_content);
         t.setText(learn_content);
         Pattern p = Pattern.compile("(?i)([a-z0-9]+(-[a-z0-9]+)?)|[,.]+");
         Matcher m = p.matcher(learn_content);
-        ViewGroup l = (ViewGroup) this.findViewById(R.id.wrapper_layout);
-
-        while (m.find()) { // Find each match in turn; String can't do this.
-            String token = m.group(0); // Access a submatch group; String can't do this.
-            l.addView(new VocabularyInput(getApplicationContext(), token));
+        ViewGroup stubViewGroup = (ViewGroup) this
+                .findViewById(R.id.wrapper_layout_stub);
+        FlowLayout flowlayout = new FlowLayout(this.getApplicationContext());
+        stubViewGroup.addView(flowlayout);
+        while (m.find()) {
+            String token = m.group(0);
+            flowlayout.addView(new VocabularyInput(getApplicationContext(),
+                    token));
         }
-//        for (String token : learn_content.split("[ \\t\\n]+")) {
-//            l.addView(new VocabularyInput(getApplicationContext(), token));
-//        }
     }
 
     @Override
