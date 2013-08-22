@@ -28,7 +28,13 @@ public class VocabularyInput extends EditText {
             this.setSelectAllOnFocus(true);
             this.setTextColor(Color.RED);
             this.setMinimumWidth(50);
-     
+            this.setOnFocusChangeListener(new OnFocusChangeListener() {
+
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus)
+                        validateVocabulary();
+                }
+            });
             this.addTextChangedListener(new TextWatcher() {
 
                 @Override
@@ -41,8 +47,6 @@ public class VocabularyInput extends EditText {
                 @Override
                 public void onTextChanged(CharSequence s, int start,
                         int before, int count) {
-                    // TODO Auto-generated method stub
-
                 }
 
                 @Override
