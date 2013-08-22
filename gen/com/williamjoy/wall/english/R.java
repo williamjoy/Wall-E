@@ -96,6 +96,7 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int activity_learn_sentence=0x7f030000;
+        public static final int edit_word=0x7f030001;
     }
     public static final class menu {
         public static final int activity_learn_sentence=0x7f090000;
@@ -199,7 +200,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:debugDraw
+          @attr name com.williamjoy.wall.english:debugDraw
         */
         public static final int FlowLayout_debugDraw = 3;
         /**
@@ -215,7 +216,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:horizontalSpacing
+          @attr name com.williamjoy.wall.english:horizontalSpacing
         */
         public static final int FlowLayout_horizontalSpacing = 0;
         /**
@@ -232,7 +233,7 @@ containing a value of this type.
 <tr><td><code>horizontal</code></td><td>0</td><td></td></tr>
 <tr><td><code>vertical</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name android:orientation
+          @attr name com.williamjoy.wall.english:orientation
         */
         public static final int FlowLayout_orientation = 2;
         /**
@@ -248,7 +249,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:verticalSpacing
+          @attr name com.williamjoy.wall.english:verticalSpacing
         */
         public static final int FlowLayout_verticalSpacing = 1;
         /** Attributes that can be used with a FlowLayout_LayoutParams.
@@ -281,7 +282,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:layout_horizontalSpacing
+          @attr name com.williamjoy.wall.english:layout_horizontalSpacing
         */
         public static final int FlowLayout_LayoutParams_layout_horizontalSpacing = 1;
         /**
@@ -295,7 +296,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:layout_newLine
+          @attr name com.williamjoy.wall.english:layout_newLine
         */
         public static final int FlowLayout_LayoutParams_layout_newLine = 0;
         /**
@@ -311,7 +312,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:layout_verticalSpacing
+          @attr name com.williamjoy.wall.english:layout_verticalSpacing
         */
         public static final int FlowLayout_LayoutParams_layout_verticalSpacing = 2;
     };

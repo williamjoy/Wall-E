@@ -42,6 +42,7 @@ public class LearnSentenceActivity extends Activity {
         ViewGroup stubViewGroup = (ViewGroup) this
                 .findViewById(R.id.passage_layout);
         FlowLayout flowlayout = new FlowLayout(this.getApplicationContext());
+        
         stubViewGroup.addView(flowlayout);
 
         while (m.find()) {

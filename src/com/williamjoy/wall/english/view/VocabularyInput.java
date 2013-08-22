@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 public class VocabularyInput extends EditText {
@@ -18,6 +19,7 @@ public class VocabularyInput extends EditText {
             this.editable = false;
         }
         this.setText(targetToken);
+        this.setInputType(EditorInfo.TYPE_DATETIME_VARIATION_NORMAL);
         if (this.isEditable()) {
             this.setSingleLine();
             this.setSelectAllOnFocus(true);
