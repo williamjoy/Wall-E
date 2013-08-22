@@ -91,8 +91,8 @@ containing a value of this type.
         public static final int given_content=0x7f050002;
         public static final int horizontal=0x7f050000;
         public static final int menu_settings=0x7f050005;
+        public static final int passage_layout=0x7f050003;
         public static final int vertical=0x7f050001;
-        public static final int wrapper_layout_stub=0x7f050003;
     }
     public static final class layout {
         public static final int activity_learn_sentence=0x7f030000;

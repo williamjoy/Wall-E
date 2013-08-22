@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Space;
 import android.widget.TextView;
 
 import com.williamjoy.wall.english.view.VocabularyInput;
@@ -24,7 +26,7 @@ public class LearnSentenceActivity extends Activity {
             + "\n"
             + "To sum up, it is clear that main causes of obesity are unhealthy eating and not enough physical activities. This ailment can be prevented and treated by healthy eating habbits and physical exercises.\n"
             + "\n"
-            + "This is a good essay. There are only a few minor errors that could have been easily prevented by proofreading this essay one last time before submission (mouse over the words underlined in blue shows corrections). Overall, this work seems worthy of IELTS Band 8. Keep up the good work!";
+            + "This is a good essay. There are only a few minor errors that could have been easily prevented by proofreading this essay one last time before submission (mouse over the words underlined in blue shows corrections). Overall, this work seems worthy of IELTS Band 8. Keep up the good work! //#(-12%)";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +34,25 @@ public class LearnSentenceActivity extends Activity {
         setContentView(R.layout.activity_learn_sentence);
         TextView t = (TextView) this.findViewById(R.id.given_content);
         t.setText(learn_content);
-        Pattern p = Pattern.compile("(?i)([a-z0-9]+(-[a-z0-9]+)?)|[,.]+");
+        Pattern p = Pattern.compile(
+                "([a-z0-9']+(-[a-z0-9]+)*)|[,.()#@\\$]+|\\n+",
+                Pattern.MULTILINE | Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(learn_content);
         ViewGroup stubViewGroup = (ViewGroup) this
-                .findViewById(R.id.wrapper_layout_stub);
+                .findViewById(R.id.passage_layout);
         FlowLayout flowlayout = new FlowLayout(this.getApplicationContext());
         stubViewGroup.addView(flowlayout);
+
         while (m.find()) {
             String token = m.group(0);
+            if (token.matches("\\n+")) {
+                flowlayout = new FlowLayout(this.getApplicationContext());
+                Space divider = new Space(getApplicationContext());
+                divider.setMinimumHeight(40);
+                stubViewGroup.addView(divider);
+                stubViewGroup.addView(flowlayout);
+                continue;
+            }
             flowlayout.addView(new VocabularyInput(getApplicationContext(),
                     token));
         }
