@@ -61,6 +61,8 @@ public class LearnSentenceActivity extends Activity {
             flowlayout.addView(current);
             if (prev != null && current.isEditable()) {
                 prev.setNextFocus(current);
+                current.setPrevFocus(prev);
+                
             }
             if (current.isEditable()) {
                 prev = current;

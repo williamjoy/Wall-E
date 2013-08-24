@@ -7,15 +7,21 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class VocabularyInput extends EditText {
     private String targetToken;
+    private String prevText;
     private boolean editable = true;
-    private TextView nextFocus;
+    private TextView nextFocus = this;
+    private TextView prevFocus = this;
+
+    public TextView getPrevFocus() {
+        return prevFocus;
+    }
 
     public VocabularyInput(Context context, String targetToken) {
         super(context);
@@ -24,6 +30,7 @@ public class VocabularyInput extends EditText {
             this.editable = false;
         }
         this.setText(targetToken);
+        this.prevText = this.getText().toString();
         // this.setInputType(EditorInfo.TYPE_DATETIME_VARIATION_NORMAL);
         if (this.isEditable()) {
             this.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -37,6 +44,19 @@ public class VocabularyInput extends EditText {
                 public void onFocusChange(View v, boolean hasFocus) {
                     if (!hasFocus)
                         validateVocabulary();
+                    else
+                        snapshort();
+                }
+            });
+            this.setOnKeyListener(new OnKeyListener() {
+
+                @Override
+                public boolean onKey(View v, int keyCode, KeyEvent event) {
+                    if (keyCode == KeyEvent.KEYCODE_DEL && prevText.isEmpty()) {
+                        prevFocus.requestFocus();
+                    }
+                    snapshort();
+                    return false;
                 }
             });
             this.addTextChangedListener(new TextWatcher() {
@@ -55,20 +75,23 @@ public class VocabularyInput extends EditText {
 
                 @Override
                 public void afterTextChanged(Editable s) {
-                    if (s.toString().endsWith(" ")) {
-                        if (nextFocus != null) {
-                            nextFocus.requestFocus();
-                            Log.v("Tokens-", s.toString() + ";Next->"
-                                    + nextFocus.getText());
-                            validateVocabulary();
-                        }
-                    }
+//                    if (s.toString().endsWith(" ")) {
+//                        nextFocus.requestFocus();
+//                        Log.v("Tokens-",
+//                                s.toString() + ";Next->" + nextFocus.getText());
+//                        validateVocabulary();
+//                        snapshort();
+//                    }
                 }
             });
         } else {
             this.setFocusable(false);
             this.setTextColor(Color.MAGENTA);
         }
+    }
+
+    protected void snapshort() {
+        this.prevText = getText().toString();
     }
 
     protected void validateVocabulary() {
@@ -100,6 +123,10 @@ public class VocabularyInput extends EditText {
 
     public void setNextFocus(TextView nextFocus) {
         this.nextFocus = nextFocus;
+    }
+
+    public void setPrevFocus(TextView prevFocus) {
+        this.prevFocus = prevFocus;
     }
 
 }

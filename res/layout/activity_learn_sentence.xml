@@ -20,7 +20,8 @@
             android:keepScreenOn="true"
             android:text="@string/learn_content"
             android:textColor="#33b5e5"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
         <LinearLayout
             android:id="@+id/passage_layout"
