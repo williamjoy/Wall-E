@@ -5,5 +5,9 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/menu_settings"/>
-
+    <item
+        android:id="@+id/menu_login"
+        android:orderInCategory="110"
+        android:showAsAction="never"
+        android:title="@string/menu_login"/>
 </menu>

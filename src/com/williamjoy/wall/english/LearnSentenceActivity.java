@@ -74,6 +74,11 @@ public class LearnSentenceActivity extends Activity {
                         SettingsActivity.class);
                 startActivityForResult(intent, 0);
                 break;
+            case (R.id.menu_login):
+                Intent intent1 = new Intent(this.getApplicationContext(),
+                        LoginActivity.class);
+                startActivityForResult(intent1, 0);
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
