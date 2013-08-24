@@ -75,13 +75,18 @@ public class VocabularyInput extends EditText {
 
                 @Override
                 public void afterTextChanged(Editable s) {
-//                    if (s.toString().endsWith(" ")) {
-//                        nextFocus.requestFocus();
-//                        Log.v("Tokens-",
-//                                s.toString() + ";Next->" + nextFocus.getText());
-//                        validateVocabulary();
-//                        snapshort();
-//                    }
+                    /*
+                     * If appending a space , focus on next widget
+                     */
+                    if (s.toString().endsWith(" ")
+                            && s.length() > prevText.length()) {
+                        nextFocus.requestFocus();
+                        Log.v("Tokens-",
+                                s.toString() + ";Next->" + nextFocus.getText());
+                        validateVocabulary();
+                    }
+                    snapshort();
+
                 }
             });
         } else {
