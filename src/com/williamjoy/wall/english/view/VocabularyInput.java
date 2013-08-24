@@ -4,10 +4,12 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -30,7 +32,10 @@ public class VocabularyInput extends EditText {
         }
         this.setText(targetToken);
         this.prevText = this.getText().toString();
-        // this.setInputType(EditorInfo.TYPE_DATETIME_VARIATION_NORMAL);
+        this.setInputType(InputType.TYPE_CLASS_TEXT
+                | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        this.setImeOptions(EditorInfo.IME_ACTION_PREVIOUS
+                | EditorInfo.IME_ACTION_NEXT);
         if (this.isEditable()) {
             this.setGravity(Gravity.CENTER_HORIZONTAL);
             this.setSingleLine();
@@ -70,20 +75,31 @@ public class VocabularyInput extends EditText {
                 @Override
                 public void onTextChanged(CharSequence s, int start,
                         int before, int count) {
-                }
-
-                @Override
-                public void afterTextChanged(Editable s) {
                     /*
                      * If appending a space , focus on next widget
                      */
-                    if (s.toString().endsWith(" ")
-                            && s.length() > prevText.length()) {
+                    if (s.toString().endsWith(" ") && count > 0) {
                         nextFocus.requestFocus();
                         validateVocabulary();
                     }
                     snapshort();
+                }
 
+                @Override
+                public void afterTextChanged(Editable s) {
+                }
+            });
+
+            this.setOnEditorActionListener(new OnEditorActionListener() {
+                @Override
+                public boolean onEditorAction(TextView v, int actionId,
+                        KeyEvent event) {
+                    boolean handled = false;
+                    if (actionId == EditorInfo.IME_ACTION_NEXT) {
+                        nextFocus.requestFocus(FOCUS_RIGHT);
+                        handled = true;
+                    }
+                    return handled;
                 }
             });
         } else {
@@ -103,7 +119,9 @@ public class VocabularyInput extends EditText {
             this.setText(targetToken);
         } else {
             this.setTextColor(Color.RED);
-            this.setText(input);
+            if (!input.equalsIgnoreCase(this.getText().toString())) {
+                this.setText(input);
+            }
         }
     }
 
