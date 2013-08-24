@@ -11,5 +11,7 @@
     <string name="learn_content"></string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_material_editor">Material Editor</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

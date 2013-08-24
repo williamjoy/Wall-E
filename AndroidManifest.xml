@@ -31,6 +31,10 @@
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
+        <activity
+            android:name="com.williamjoy.wall.english.MaterialEditorActivity"
+            android:label="@string/title_activity_material_editor" >
+        </activity>
     </application>
 
 </manifest>
