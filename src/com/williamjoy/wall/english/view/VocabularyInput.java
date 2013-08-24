@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -81,8 +80,6 @@ public class VocabularyInput extends EditText {
                     if (s.toString().endsWith(" ")
                             && s.length() > prevText.length()) {
                         nextFocus.requestFocus();
-                        Log.v("Tokens-",
-                                s.toString() + ";Next->" + nextFocus.getText());
                         validateVocabulary();
                     }
                     snapshort();
