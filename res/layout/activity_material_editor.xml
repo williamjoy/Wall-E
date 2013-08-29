@@ -6,20 +6,36 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MaterialEditorActivity" >
+    tools:context=".MaterialEditorActivity" 
+    android:background="#111111" >
 
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/editTextInputContent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:minLines="16"
+                android:textCursorDrawable="@null"
+                android:textColor="#7b0099" >
+				
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:onClick="onButtonCommitContentClicked" />
+
         </LinearLayout>
-    </ScrollView>
 
 </RelativeLayout>

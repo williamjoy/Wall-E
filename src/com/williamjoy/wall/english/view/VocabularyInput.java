@@ -30,7 +30,7 @@ public class VocabularyInput extends EditText {
         if (targetToken.matches("[- .,/)(%\\$@#!?\\\"]+")) {
             this.editable = false;
         }
-        this.setText(targetToken);
+//        this.setText(targetToken);
         this.prevText = this.getText().toString();
         this.setInputType(InputType.TYPE_CLASS_TEXT
                 | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);

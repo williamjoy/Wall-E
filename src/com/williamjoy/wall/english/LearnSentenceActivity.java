@@ -11,20 +11,26 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Space;
 import android.widget.TextView;
 
 import com.williamjoy.wall.english.view.VocabularyInput;
 
 public class LearnSentenceActivity extends Activity {
-    String learn_content = "A plant cultivated for an edible part, such as the root of the beet, the leaf of spinach, or the flower buds of broccoli or cauliflower.";
+    String learn_content = "Dedicated to my little Mary. :)";
+    public static final String LEARN_CONTENT = "LEARN_CONTENT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_sentence);
         TextView t = (TextView) this.findViewById(R.id.given_content);
+
+        Intent intent = getIntent();
+        String input = intent.getStringExtra(LEARN_CONTENT);
+        if (input != null && !input.isEmpty()) {
+            learn_content = input;
+        }
         t.setText(learn_content);
         Pattern p = Pattern.compile(
                 "([a-z0-9']+(-[a-z0-9]+)*)|[,.()#@\\$!?\\\"]+|\\n+",
@@ -52,7 +58,7 @@ public class LearnSentenceActivity extends Activity {
             if (prev != null && current.isEditable()) {
                 prev.setNextFocus(current);
                 current.setPrevFocus(prev);
-                
+
             }
             if (current.isEditable()) {
                 prev = current;
@@ -70,18 +76,21 @@ public class LearnSentenceActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case (R.id.menu_settings):
-                Intent intent = new Intent(this.getApplicationContext(),
-                        SettingsActivity.class);
-                startActivityForResult(intent, 0);
+                startActivity(new Intent(this.getApplicationContext(),
+                        SettingsActivity.class));
                 break;
             case (R.id.menu_login):
-                Intent intent1 = new Intent(this.getApplicationContext(),
-                        LoginActivity.class);
-                startActivityForResult(intent1, 0);
+                startActivity(new Intent(this.getApplicationContext(),
+                        LoginActivity.class));
+                break;
+            case (R.id.menu_input):
+                startActivity(new Intent(this.getApplicationContext(),
+                        MaterialEditorActivity.class));
                 break;
             default:
                 return super.onOptionsItemSelected(item);
         }
         return true;
     }
+
 }
