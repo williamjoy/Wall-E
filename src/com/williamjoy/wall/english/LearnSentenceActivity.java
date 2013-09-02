@@ -19,6 +19,7 @@ import com.williamjoy.wall.english.view.VocabularyInput;
 public class LearnSentenceActivity extends Activity {
     String learn_content = "Dedicated to my little Mary. :)";
     public static final String LEARN_CONTENT = "LEARN_CONTENT";
+    private boolean isAutoComplete = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class LearnSentenceActivity extends Activity {
 
         Intent intent = getIntent();
         String input = intent.getStringExtra(LEARN_CONTENT);
+        isAutoComplete = intent.getBooleanExtra("ENABLE_AUTO_COMPLETE", false);
         if (input != null && !input.isEmpty()) {
             learn_content = input;
         }
@@ -62,6 +64,7 @@ public class LearnSentenceActivity extends Activity {
             }
             if (current.isEditable()) {
                 prev = current;
+                current.setAutoComplete(isAutoComplete);
             }
         }
     }

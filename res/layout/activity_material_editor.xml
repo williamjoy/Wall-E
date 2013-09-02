@@ -12,10 +12,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/input_content_label"
-            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#33b5e5"
             android:textStyle="bold"
             android:typeface="monospace" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonCommitContentClicked"
+            android:text="OK" />
 
         <EditText
             android:id="@+id/editTextInputContent"
@@ -30,8 +36,19 @@
             <requestFocus />
         </EditText>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/checkBoxEnableAutoComplete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Enable Auto Complete" />
+        </LinearLayout>
+
         <Button
-            android:id="@+id/button1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonCommitContentClicked"

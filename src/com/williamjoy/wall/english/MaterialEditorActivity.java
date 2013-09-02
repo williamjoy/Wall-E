@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 public class MaterialEditorActivity extends Activity {
@@ -29,7 +30,9 @@ public class MaterialEditorActivity extends Activity {
         Intent intent = new Intent(getApplicationContext(),
                 LearnSentenceActivity.class);
         intent.putExtra("LEARN_CONTENT", inputText.replace('’', '\''));
+        boolean enableAutoComplete = ((CheckBox) this
+                .findViewById(R.id.checkBoxEnableAutoComplete)).isChecked();
+        intent.putExtra("ENABLE_AUTO_COMPLETE", enableAutoComplete);
         startActivityForResult(intent, 0);
     }
-
 }

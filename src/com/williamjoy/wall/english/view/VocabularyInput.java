@@ -24,6 +24,13 @@ public class VocabularyInput extends EditText {
         return prevFocus;
     }
 
+    public void setAutoComplete(boolean autoComplete) {
+
+        this.setInputType(InputType.TYPE_CLASS_TEXT
+                | (autoComplete ? InputType.TYPE_TEXT_VARIATION_NORMAL
+                        : InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS));
+    }
+
     public VocabularyInput(Context context, String targetToken) {
         super(context);
         this.targetToken = targetToken.trim();
