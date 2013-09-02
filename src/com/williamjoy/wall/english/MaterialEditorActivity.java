@@ -28,7 +28,7 @@ public class MaterialEditorActivity extends Activity {
 
         Intent intent = new Intent(getApplicationContext(),
                 LearnSentenceActivity.class);
-        intent.putExtra("LEARN_CONTENT", inputText);
+        intent.putExtra("LEARN_CONTENT", inputText.replace('’', '\''));
         startActivityForResult(intent, 0);
     }
 
