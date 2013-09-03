@@ -83,8 +83,11 @@ public class LearnSentenceActivity extends Activity {
                         SettingsActivity.class));
                 break;
             case (R.id.menu_login):
-                startActivity(new Intent(this.getApplicationContext(),
-                        LoginActivity.class));
+//                startActivity(new Intent(this.getApplicationContext(),
+//                        LoginActivity.class));
+            	Intent i = new Intent(Intent.ACTION_VIEW);//
+                i.setClassName("com.shanbay.words", "com.shanbay.words.activity.SearchActivity");
+                startActivity(i);
                 break;
             case (R.id.menu_input):
                 startActivity(new Intent(this.getApplicationContext(),
