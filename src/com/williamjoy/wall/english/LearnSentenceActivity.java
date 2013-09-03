@@ -48,6 +48,10 @@ public class LearnSentenceActivity extends Activity {
             String token = m.group(0);
             if (token.matches("\\n+")) {
                 flowlayout = new FlowLayout(this.getApplicationContext());
+                /*
+                 * android.widget.Space @since API level 14
+                 * TODO: replace with back compatible widget
+                 */
                 Space divider = new Space(getApplicationContext());
                 divider.setMinimumHeight(40);
                 stubViewGroup.addView(divider);
