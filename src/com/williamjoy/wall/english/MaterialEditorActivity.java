@@ -29,7 +29,7 @@ public class MaterialEditorActivity extends Activity {
 
         Intent intent = new Intent(getApplicationContext(),
                 LearnSentenceActivity.class);
-        intent.putExtra("LEARN_CONTENT", inputText.replace('’', '\''));
+        intent.putExtra("LEARN_CONTENT", inputText);
         boolean enableAutoComplete = ((CheckBox) this
                 .findViewById(R.id.checkBoxEnableAutoComplete)).isChecked();
         intent.putExtra("ENABLE_AUTO_COMPLETE", enableAutoComplete);
