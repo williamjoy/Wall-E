@@ -18,7 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:keepScreenOn="true"
-            android:text="@string/learn_content"
             android:textColor="#33b5e5"
             android:textStyle="bold"
             android:typeface="monospace" />

@@ -45,6 +45,7 @@
                 android:id="@+id/checkBoxEnableAutoComplete"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textStyle="bold"
                 android:text="Enable Auto Complete" />
         </LinearLayout>
 
