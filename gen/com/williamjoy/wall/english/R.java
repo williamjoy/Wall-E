@@ -95,6 +95,7 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int ic_share_to_wall_english=0x7f020001;
     }
     public static final class id {
         public static final int action_forgot_password=0x7f050011;

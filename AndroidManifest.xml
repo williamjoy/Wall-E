@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.williamjoy.wall.english"
-    android:versionCode="12"
-    android:versionName="1.2" >
+    android:versionCode="15"
+    android:versionName="1.2.1" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -38,7 +38,7 @@
         </activity>
         <activity
             android:name=".ShareToWallEnglish"
-            android:label="Send to Wall-English" >
+            android:label="Wall-English" android:icon="@drawable/ic_share_to_wall_english">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
