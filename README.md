@@ -6,9 +6,8 @@ Wall-E is assisting you memorizing English quotes, sentences, essays
 
 Google Play URL
 =======
-https://play.google.com/store/apps/details?id=com.williamjoy.wall.english
-
- - no permission needed, currently the app is for offline use demo
+![Android app on Google Play](https://developer.android.com/images/brand/en_app_rgb_wo_60.png)
+https://play.google.com/store/apps/details?id=com.williamjoy.wall.english"
 
 Screenshot
 =======
