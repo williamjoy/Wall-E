@@ -3,7 +3,6 @@ package com.williamjoy.wall.english;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.CheckBox;
 
 public class ShareToWallEnglish extends Activity {
 	@Override
@@ -11,8 +10,6 @@ public class ShareToWallEnglish extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		Intent intent = this.getIntent();
-		String action = intent.getAction();
-		String type = intent.getType();
 
 		String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
 		if (sharedText != null) {

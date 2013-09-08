@@ -34,7 +34,7 @@ public class VocabularyInput extends EditText {
     public VocabularyInput(Context context, String targetToken) {
         super(context);
         this.targetToken = targetToken.trim();
-        if (targetToken.matches("[- .,/)(%\\$@#!?\\\"]+")) {
+        if (targetToken.matches("[-: .,/)(%\\$@#!?\\\"]+")) {
             this.editable = false;
             this.setText(targetToken);
         }
