@@ -7,10 +7,9 @@ import android.os.Bundle;
 public class ShareToWallEnglish extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		Intent intent = this.getIntent();
-
+		
 		String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
 		if (sharedText != null) {
 			Intent i = new Intent(getApplicationContext(),
