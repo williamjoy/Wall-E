@@ -105,8 +105,8 @@ containing a value of this type.
         public static final int ABOUT_NAME=0x7f050002;
         public static final int ABOUT_URL=0x7f050006;
         public static final int ABOUT_VERSION=0x7f050003;
-        public static final int action_forgot_password=0x7f050017;
-        public static final int action_settings=0x7f050018;
+        public static final int action_forgot_password=0x7f050016;
+        public static final int action_settings=0x7f050017;
         public static final int button1=0x7f050009;
         public static final int checkBoxEnableAutoComplete=0x7f050012;
         public static final int editTextInputContent=0x7f050011;
@@ -117,9 +117,8 @@ containing a value of this type.
         public static final int login_form=0x7f05000c;
         public static final int login_status=0x7f05000a;
         public static final int login_status_message=0x7f05000b;
-        public static final int menu_about=0x7f050016;
-        public static final int menu_google_translate=0x7f050015;
-        public static final int menu_login=0x7f050014;
+        public static final int menu_about=0x7f050015;
+        public static final int menu_google_translate=0x7f050014;
         public static final int menu_settings=0x7f050013;
         public static final int passage_layout=0x7f050008;
         public static final int password=0x7f05000e;

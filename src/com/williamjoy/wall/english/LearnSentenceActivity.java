@@ -90,10 +90,10 @@ public class LearnSentenceActivity extends Activity {
                 startActivity(new Intent(this.getApplicationContext(),
                         SettingsActivity.class));
                 break;
-            case (R.id.menu_login):
-                startActivity(new Intent(this.getApplicationContext(),
-                        LoginActivity.class));
-                break;
+//            case (R.id.menu_login):
+//                startActivity(new Intent(this.getApplicationContext(),
+//                        LoginActivity.class));
+//                break;
             case (R.id.menu_google_translate):
 
                 startGoogleTranslateActivity(learn_content);
