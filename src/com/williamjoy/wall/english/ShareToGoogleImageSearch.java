@@ -17,6 +17,13 @@ public class ShareToGoogleImageSearch extends Activity {
 			startActivity(new Intent(Intent.ACTION_VIEW,
 					Uri.parse("http://www.google.com/search?tbm=isch&q="
 							+ Uri.encode(queryText))));
+		}else{
+			 Uri uri = intent.getData();
+			if (uri != null) {
+				startActivity(new Intent(Intent.ACTION_VIEW,
+						Uri.parse("http://www.google.com/search?tbm=isch&q="
+								+ Uri.encode(uri.getHost()))));
+			}
 		}
 
 		finish();

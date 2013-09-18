@@ -53,15 +53,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ShareToGoogleImageSearch"
+            android:name=".TextReaderActivity"
             android:icon="@drawable/ic_google"
-            android:label="Google Image Search" >
+            android:label="English Reader" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ShareToGoogleImageSearch"
+            android:icon="@drawable/ic_google"
+            android:label="Google Image Search" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="dict" />
             </intent-filter>
         </activity>
     </application>
